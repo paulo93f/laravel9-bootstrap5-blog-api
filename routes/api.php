@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\Api\UserController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +19,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+
+Route::controller(PostController::class)->group(function () {
+    Route::get('/posts', 'index');
+    Route::post('/post', 'store');
+    Route::get('/post/{id}', 'show');
+    Route::put('/post/{id}', 'update');
+    Route::delete('/post/{id}', 'destroy');
+});
+
+
+Route::controller(UserController::class)->group(function () {
+    Route::get('/users', 'index');
+    Route::get('/user/{id}', 'show');
 });
