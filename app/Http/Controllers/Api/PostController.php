@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Http;
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Posts resources.
      *
      * @return \Illuminate\Http\Response
      */
