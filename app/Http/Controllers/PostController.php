@@ -2,31 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Api\ApiController as ApiController;
+
 use App\Models\Post;
-use Illuminate\Contracts\Pagination\Paginator;
+use App\Models\User;
+
+
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 
 
-class PostController extends Controller
+class PostController extends ApiController
 {
-    public function index(Request $request)
+    public function getPosts(Request $request)
     {
 
-        $posts = Http::get('https://jsonplaceholder.typicode.com/posts')->json();
+        $postsCollection = ApiController::index();
 
-        $posts = collect($posts)->map(function ($post) {
-            $model = new Post();
-            $model->user_id = $post['userId'];
-            $model->id = $post['id'];
-            $model->title = $post['title'];
-            $model->body = $post['body'];
-            return $model;
-        });
-
-        $data = $this->paginate($posts, 10, $request->page, [
+        $data = $this->paginate($postsCollection, 9, $request->page, [
             'path' => LengthAwarePaginator::resolveCurrentPath()
         ]);
 
@@ -45,13 +40,26 @@ class PostController extends Controller
      */
 
     public function paginate($items, $perPage = 5, $page = null, $options = [])
-
     {
-
         $page = $page ?: (LengthAwarePaginator::resolveCurrentPage() ?: 1);
 
         $items = $items instanceof Collection ? $items : Collection::make($items);
 
         return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
+    }
+
+    public function getPost($postId)
+    {
+        $post = ApiController::show($postId);
+
+        return view('posts.post_details', compact('post'));
+    }
+
+    public function getPostUser($userId)
+    {
+
+        $user = Http::get('https://jsonplaceholder.typicode.com/users/' . $userId)->object();
+
+        return $user;
     }
 }

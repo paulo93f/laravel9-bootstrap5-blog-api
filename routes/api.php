@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Controllers\Api\UserController;
 
 use Illuminate\Http\Request;
@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::controller(PostController::class)->group(function () {
+Route::controller(ApiController::class)->group(function () {
     Route::get('/posts', 'index');
     Route::post('/post', 'store');
     Route::get('/post/{id}', 'show');
