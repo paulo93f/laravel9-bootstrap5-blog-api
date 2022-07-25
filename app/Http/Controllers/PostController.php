@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Http;
 
 class PostController extends ApiController
 {
+
+    /**
+     * Get the posts details from the api class controller.
+     */
     public function getPosts(Request $request)
     {
 
@@ -30,14 +34,8 @@ class PostController extends ApiController
     }
 
     /**
-
-     * The attributes that are mass assignable.
-
-     *
-
-     * @var array
-
-     */
+    * Function helper for pagination 
+    */
 
     public function paginate($items, $perPage = 5, $page = null, $options = [])
     {
@@ -48,6 +46,9 @@ class PostController extends ApiController
         return new LengthAwarePaginator($items->forPage($page, $perPage), $items->count(), $perPage, $page, $options);
     }
 
+    /**
+     * Get the specified posts details from the api class controller.
+     */
     public function getPost($postId)
     {
         $post = ApiController::show($postId);
