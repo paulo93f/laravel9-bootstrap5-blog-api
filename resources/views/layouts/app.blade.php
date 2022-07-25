@@ -25,7 +25,9 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -40,17 +42,18 @@
                         <a class="nav-link" href="contact">Contact Us</a>
                     </li>
                 </ul>
-
+                -->
                 <ul class="navbar-nav">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        <a class="nav-link" href="posts">Posts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="new_user"><i class="fas fa-user-plus"></i> Signup</a>
+                        <a class="nav-link" href="api/documentation">API
+                            Documentation</a>
                     </li>
 
-                </ul> -->
+                </ul>
 
             </div>
         </nav>

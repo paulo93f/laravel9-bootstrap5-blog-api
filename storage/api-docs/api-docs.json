@@ -1,0 +1,199 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API Post",
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://127.0.0.1:8000/"
+        }
+    ],
+    "paths": {
+        "/api/posts/": {
+            "get": {
+                "tags": [
+                    "Blog API Documentation"
+                ],
+                "summary": "Shows all posts",
+                "operationId": "6236853c422f72e1f3a0cdc616c3a434",
+                "responses": {
+                    "200": {
+                        "description": "Shows all posts."
+                    },
+                    "default": {
+                        "description": "An error ocurred."
+                    }
+                }
+            }
+        },
+        "/api/post/": {
+            "post": {
+                "tags": [
+                    "Blog API Documentation"
+                ],
+                "summary": "Insert a post",
+                "operationId": "a7a803993f41b0a8b92bbdf99cf5bbd3",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Post title",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "body",
+                        "in": "path",
+                        "description": "Post body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "User id of the post",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Insert a post."
+                    },
+                    "201": {
+                        "description": "Post created."
+                    },
+                    "default": {
+                        "description": "An error ocurred."
+                    }
+                }
+            }
+        },
+        "/api/post/{id}": {
+            "get": {
+                "tags": [
+                    "Blog API Documentation"
+                ],
+                "summary": "Get post and user information",
+                "description": "Returns post and user data",
+                "operationId": "58c61d9ae9731d4b0ca60b253009607c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Post id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Blog API Documentation"
+                ],
+                "summary": "Update the post information",
+                "description": "Update the post information",
+                "operationId": "258edcbae049f2ec415695e365bfb48c",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Post id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "path",
+                        "description": "Post title",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "body",
+                        "in": "path",
+                        "description": "Post body",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "User id of the post",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Blog API Documentation"
+                ],
+                "summary": "Delete a post",
+                "description": "Delete a post",
+                "operationId": "cda5d02ee815a49a00e7131db001c350",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Post id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    }
+                }
+            }
+        }
+    }
+}
