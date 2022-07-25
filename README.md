@@ -51,3 +51,5 @@ Quise utilizar bootstrap 5 por comodidad, ya que es con el que más experiencia 
 Por otro lado, respecto a la realización de la API, decidí ahorrarme la realización de base de datos y migraciones y leer los datos directamente de la aplicación proporcionada. Aquí tuve diversas dudas entre si utilizar modelos o no, ya que como directamente leia el json con los objetos, con convertilos a un collection ya podía amoldarlos como quisiera. Por lo que finalmente, desde el controlador he podido hacerlo sin requerir a esto.
 
 Estaré encantado de recibir criticas constructivas ya que estoy seguro que de que algunas cosas se podrían mejorar.
+
+> Si al realizar la ejecución de los test origina algún error, ejecutar el comando './vendor/bin/phpunit' y revisar si la carpeta Unit está creada.
