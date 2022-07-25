@@ -20,11 +20,13 @@ SCSS: Vite
 
     `npm install`
 
-    `npm build`
+    `npm run build`
 
     `composer install`
 
 3. Generar una nueva key para la aplicación.
+
+    `cp .env.example .env `
 
     `php artisan key:generate`
 
