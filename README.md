@@ -48,7 +48,7 @@ Al comenzar el desarrollo con laravel 9, me encontré con los primeros inconveni
 
 Quise utilizar bootstrap 5 por comodidad, ya que es con el que más experiencia tengo. Los propios apartados de la pagina los supe realizar de forma sencilla y sin ninguna complicación. Sin contar la forma de realizar la paginación desde un collection, ya que en laravel 9 ha habido cambios en algunos metodos y clases y he tenido que realizar alguna que otra busqueda exhaustiva.
 
-Por otro lado, respecto a la realización de la API, decidí ahorrarme la realización de base de datos y migraciones y leer los datos directamente de la aplicación proporcionada. Aquí tuve diversas dudas entre si utilizar modelos o no, ya que como directamente leia el json con los objetos, con convertilos a un collection ya podía amoldarlos como quisiera. Por lo que finalmente, desde el controlador he podido hacerlo sin requerir a esto.
+Por otro lado, respecto a la realización de la API, quizás podria haber aprovechado mejor la forma de realizar y utilizar los modelos. Ya que tuve algunas dudas de como emplearlos sin relaciones en BBDD, ya que directamente leia el json, y con convertilos a un collection ya podía amoldarlos como quisiera. Por lo que finalmente, desde el controlador he podido hacerlo sin requerir mucho más.
 
 Estaré encantado de recibir criticas constructivas ya que estoy seguro que de que algunas cosas se podrían mejorar.
 
