@@ -52,4 +52,3 @@ Por otro lado, respecto a la realización de la API, quizás podria haber aprove
 
 Estaré encantado de recibir criticas constructivas ya que estoy seguro que de que algunas cosas se podrían mejorar.
 
-> Si al realizar la ejecución de los test origina algún error, ejecutar el comando './vendor/bin/phpunit' y revisar si la carpeta Unit está creada.
